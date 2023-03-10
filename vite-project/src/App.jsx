@@ -1,21 +1,21 @@
+import { useState } from 'react'
+import Todologo from './components/Todologo'
+import Todoinput from './components/Todoinput'
+import Todolist from './components/TodoList'
+import Todofilter from './components/Todofilter'
 import './App.css'
-import React from 'react';
-
-import Counter from './components'  
 
 function App() {
-   const [isVisible, setIsVisible] = react.useState(false)
-  
+  const [todos, setTodos] = useState([]);
+  const [filteredTodos, setFilteredTodos] = useState([]);
   
   return (
     <div className="App">
-       <Counter/>
-    <h2>Hello</h2>
+     <Todologo/>
+     <Todoinput setTodos={setTodos}/>
+     <Todolist todos={todos}/>
+     <Todofilter todos={todos}/>
     </div>
-   
-
-    //npm strict action gibi bir şey keep alive
-    //axios diye bir package ile fetch.then.then demene gerek kalmaz daha kısa
   )
 }
 
