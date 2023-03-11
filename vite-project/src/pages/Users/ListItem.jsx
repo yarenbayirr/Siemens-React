@@ -1,0 +1,8 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
+function ListItem({ user }) {
+  return <Link to={`/users/${user.id}`}>{user.name}</Link>;
+}
+
+export default ListItem;
